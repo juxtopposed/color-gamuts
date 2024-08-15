@@ -5,11 +5,11 @@
   <script src="https://colorjs.io/dist/color.global.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    @import url('https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans');
+    @import url('https://fonts.googleapis.com/css?family=Martian%20Mono:200');
     .row {
       display: flex;
       flex-direction: row;
-      height: 100vh;
+      margin-top: 1rem;
     }
 
     .colors {
@@ -35,21 +35,39 @@
     }
 
     h1, H4 {
-      font-weight: normal;
+      font-weight: 200;
       margin: 0;
     }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 0.75rem;
+    }
+
     body {
-      font-family: 'IBM Plex Sans';
+      font-family: 'Martian Mono';
       overflow-x: hidden;
-      font-size: 16px;
+      font-weight: 200;
+      font-size: 1rem;
       background-color: black;
       margin: 2rem;
-      color: white;
+      color: #c9c9c9;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -72,7 +90,7 @@
     <div id="green" class="column"></div>
 
   </div>
-  
+  <h4>Made by <a href="https://x.com/juxtopposed" target="_blank">Juxtopposed</a></h4>
 
   <script>
 
