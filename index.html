@@ -20,24 +20,42 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 80vh;
+      height: 70vh;
       width: 25vw;
     }
 
+    #names {
+      width: 100%;
+      max-width: 20vw;
+    }
     p {
       line-height: 0;
       white-space: nowrap;
       height: 100%;
     }
+
+    h1, H4 {
+      font-weight: normal;
+      margin: 0;
+    }
     body {
       font-family: 'IBM Plex Sans';
-      overflow: hidden;
+      overflow-x: hidden;
       font-size: 16px;
+      background-color: black;
+      margin: 2rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
     }
   </style>
 </head>
 <body>
-  <h1>Color Space Test</h1>
+  <h1>Color Gamut Test</h1>
+  <h4>The more colors you see, the wider your display's color gamut.</h4>
   
   <div class="row">
     <div id="names" class="column">
