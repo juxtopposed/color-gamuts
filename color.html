@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Gamut Test</title>
+  <script src="https://colorjs.io/dist/color.global.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans');
+    .row {
+      display: flex;
+      flex-direction: row;
+      height: 280px;
+    }
+
+    #names {
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25vw;
+    }
+
+    p {
+      line-height: 0;
+    }
+    body {
+      font-family: 'IBM Plex Sans';
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Space Test</h1>
+  
+  <div class="row">
+    <div id="names">
+      <p>sRGB</p>
+      <p>P3</p>
+      <p>Adobe RGB</p>
+      <p>Rec. 2020</p>
+      <p>ProPhoto</p>
+      <p>XYZ D50</p>
+      <p>XYZ D65</p>
+    </div>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+
+  </div>
+  
+
+  <script>
+
+    let colorRedSRGB = new Color("srgb", [1, 0, 0]);
+    let colorRedP3 = new Color("p3", [1, 0, 0]);
+    let colorRedA98RGB = new Color("a98rgb", [1, 0, 0]);
+    let colorRedREC2020 = new Color("rec2020", [1, 0, 0]);
+    let colorRedProPhoto = new Color("prophoto", [1, 0, 0]);
+    let colorRedXYZD50 = new Color("xyz-d50", [1, 0, 0]);
+    let colorRedXYZD65 = new Color("xyz-d65", [1, 0, 0]);
+
+    let colorBlueSRGB = new Color("srgb", [0, 0, 1]);
+    let colorBlueP3 = new Color("p3", [0, 0, 1]);
+    let colorBlueA98RGB = new Color("a98rgb", [0, 0, 1]);
+    let colorBlueREC2020 = new Color("rec2020", [0, 0, 1]);
+    let colorBlueProPhoto = new Color("prophoto", [0, 0, 1]);
+    let colorBlueXYZD50 = new Color("xyz-d50", [0, 0, 1]);
+    let colorBlueXYZD65 = new Color("xyz-d65", [0, 0, 1]);
+
+    let colorGreenSRGB = new Color("srgb", [0, 1, 0]);
+    let colorGreenP3 = new Color("p3", [0, 1, 0]);
+    let colorGreenA98RGB = new Color("a98rgb", [0, 1, 0]);
+    let colorGreenREC2020 = new Color("rec2020", [0, 1, 0]);
+    let colorGreenProPhoto = new Color("prophoto", [0, 1, 0]);
+    let colorGreenXYZD50 = new Color("xyz-d50", [0, 1, 0]);
+    let colorGreenXYZD65 = new Color("xyz-d65", [0, 1, 0]);
+
+    let A98RGBRedString = colorRedA98RGB.toString();
+    let P3RedString = colorRedP3.toString();
+    let ProPhotoRedString = colorRedProPhoto.toString();
+    let REC2020RedString = colorRedREC2020.toString();
+    let XYZD50RedString = colorRedXYZD50.toString();
+    let XYZD65RedString = colorRedXYZD65.toString();
+    let sRGBRedString = colorRedSRGB.toString();
+
+    let sRGBBlueString = colorBlueSRGB.toString();
+    let P3BlueString = colorBlueP3.toString();
+    let A98RGBBlueString = colorBlueA98RGB.toString();
+    let REC2020BlueString = colorBlueREC2020.toString();
+    let ProPhotoBlueString = colorBlueProPhoto.toString();
+    let XYZD50BlueString = colorBlueXYZD50.toString();
+    let XYZD65BlueString = colorBlueXYZD65.toString();
+
+    let sRGBGreenString = colorGreenSRGB.toString();
+    let P3GreenString = colorGreenP3.toString();
+    let A98RGBGreenString = colorGreenA98RGB.toString();
+    let REC2020GreenString = colorGreenREC2020.toString();
+    let ProPhotoGreenString = colorGreenProPhoto.toString();
+    let XYZD50GreenString = colorGreenXYZD50.toString();
+    let XYZD65GreenString = colorGreenXYZD65.toString();
+
+
+
+    // Display colors
+    document.getElementById("red").innerHTML = `
+      <div style="height: 40px; width: 25vw; background-color: ${sRGBRedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${P3RedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${A98RGBRedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${REC2020RedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoRedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD50RedString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD65RedString};"></div>
+      
+    `;
+
+    document.getElementById("blue").innerHTML = `
+      <div style="height: 40px; width: 25vw; background-color: ${sRGBBlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${P3BlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${A98RGBBlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${REC2020BlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoBlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD50BlueString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD65BlueString};"></div>
+    `;
+
+    document.getElementById("green").innerHTML = `
+      <div style="height: 40px; width: 25vw; background-color: ${sRGBGreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${P3GreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${A98RGBGreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${REC2020GreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoGreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD50GreenString};"></div>
+      <div style="height: 40px; width: 25vw; background-color: ${XYZD65GreenString};"></div>
+
+
+    `;
+  </script>
+</body>
+</html>
