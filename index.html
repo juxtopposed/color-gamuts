@@ -1,15 +1,20 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Color Gamut Test</title>
   <script src="https://colorjs.io/dist/color.global.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Martian%20Mono:200');
+
     .row {
       display: flex;
       flex-direction: row;
       margin-top: 1rem;
+      width: 100%;
     }
 
     .colors {
@@ -28,13 +33,15 @@
       width: 100%;
       max-width: 25vw;
     }
+
     p {
       line-height: 0;
       white-space: nowrap;
       height: 100%;
     }
 
-    h1, H4 {
+    h1,
+    H4 {
       font-weight: 200;
       margin: 0;
     }
@@ -45,6 +52,7 @@
 
     h4 {
       font-size: 0.75rem;
+      line-height: 2;
     }
 
     body {
@@ -52,9 +60,9 @@
       overflow-x: hidden;
       font-weight: 200;
       font-size: 1rem;
-      background-color: black;
+
       margin: 2rem;
-      color: #c9c9c9;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -62,19 +70,50 @@
       gap: 2rem;
     }
 
+    body[data-theme="dark"] {
+      background-color: black;
+      color: #c9c9c9;
+    }
+
+    body[data-theme="light"] {
+      background-color: white;
+      color: black;
+    }
+
+
     a {
       text-decoration: none;
-      color: white;
-    }
-    a:hover {
+      color: inherit;
       text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    #mode {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 2rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
   </style>
 </head>
+
 <body>
-  <h1>Color Gamut Test</h1>
-  <h4>The more colors you see, the wider your display's color gamut.</h4>
-  
+  <div style="width: 100%; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
+    <h1>Color Gamut Test</h1>
+    <h4>The more colors you see, the wider your display's color gamut.</h4>
+  </div>
+
+
+  <div id="mode">
+    <i class="material-icons" id="theme-icon">contrast</i>
+  </div>
+
+
   <div class="row">
     <div id="names" class="column">
       <p>sRGB</p>
@@ -177,6 +216,45 @@
 
 
     `;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const iconElement = document.getElementById('theme-icon');
+      let theme = 'system';
+
+
+      function applySystemTheme() {
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkScheme) {
+          document.body.setAttribute('data-theme', 'dark');
+        } else {
+          document.body.setAttribute('data-theme', 'light');
+        }
+        iconElement.textContent = 'contrast';
+      }
+
+      if (theme === 'system') {
+        applySystemTheme();
+      }
+
+      iconElement.addEventListener('click', () => {
+        if (theme === 'system') {
+          theme = 'dark';
+          document.body.setAttribute('data-theme', 'dark');
+          iconElement.textContent = 'dark_mode';
+        } else if (theme === 'dark') {
+          theme = 'light';
+          document.body.setAttribute('data-theme', 'light');
+          iconElement.textContent = 'light_mode';
+        } else {
+          theme = 'system';
+          applySystemTheme();
+        }
+      });
+    });
+
+
+
   </script>
 </body>
+
 </html>
