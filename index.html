@@ -34,11 +34,7 @@
       max-width: 20vw;
     }
 
-    @media screen and (max-width: 1000px) {
-      #names {
-        max-width: 30vw;
-      }
-    }
+
 
     p {
       line-height: 0;
@@ -67,7 +63,7 @@
       font-weight: 200;
       font-size: 1rem;
 
-      margin: 1rem;
+      margin: 2rem;
 
       display: flex;
       flex-direction: column;
@@ -105,6 +101,16 @@
       cursor: pointer;
       transition: color 0.3s ease;
     }
+
+    @media screen and (max-width: 1000px) {
+      #names {
+        max-width: 30vw;
+      }
+
+      body {
+        margin: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -125,7 +131,7 @@
       <p>sRGB</p>
       <p>P3</p>
       <p>AdobeRGB</p>
-      <p>Rec. 2020</p>
+      <p>Rec.2020</p>
       <p>ProPhoto</p>
       <p>XYZ D50</p>
       <p>XYZ D65</p>
