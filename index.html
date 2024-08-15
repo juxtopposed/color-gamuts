@@ -9,23 +9,30 @@
     .row {
       display: flex;
       flex-direction: row;
-      height: 280px;
+      height: 100vh;
     }
 
-    #names {
-      height: 280px;
+    .colors {
+      height: 100%;
+    }
+
+    .column {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 80vh;
       width: 25vw;
     }
 
     p {
       line-height: 0;
+      white-space: nowrap;
+      height: 100%;
     }
     body {
       font-family: 'IBM Plex Sans';
       overflow: hidden;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -33,18 +40,18 @@
   <h1>Color Space Test</h1>
   
   <div class="row">
-    <div id="names">
+    <div id="names" class="column">
       <p>sRGB</p>
       <p>P3</p>
-      <p>Adobe RGB</p>
+      <p>AdobeRGB</p>
       <p>Rec. 2020</p>
       <p>ProPhoto</p>
       <p>XYZ D50</p>
       <p>XYZ D65</p>
     </div>
-    <div id="red"></div>
-    <div id="blue"></div>
-    <div id="green"></div>
+    <div id="red" class="column"></div>
+    <div id="blue" class="column"></div>
+    <div id="green" class="column"></div>
 
   </div>
   
@@ -103,34 +110,34 @@
 
     // Display colors
     document.getElementById("red").innerHTML = `
-      <div style="height: 40px; width: 25vw; background-color: ${sRGBRedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${P3RedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${A98RGBRedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${REC2020RedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoRedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD50RedString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD65RedString};"></div>
+      <div class="colors" style="background-color: ${sRGBRedString};"></div>
+      <div class="colors" style="background-color: ${P3RedString};"></div>
+      <div class="colors" style="background-color: ${A98RGBRedString};"></div>
+      <div class="colors" style="background-color: ${REC2020RedString};"></div>
+      <div class="colors" style="background-color: ${ProPhotoRedString};"></div>
+      <div class="colors" style="background-color: ${XYZD50RedString};"></div>
+      <div class="colors" style="background-color: ${XYZD65RedString};"></div>
       
     `;
 
     document.getElementById("blue").innerHTML = `
-      <div style="height: 40px; width: 25vw; background-color: ${sRGBBlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${P3BlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${A98RGBBlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${REC2020BlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoBlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD50BlueString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD65BlueString};"></div>
+      <div class="colors" style="background-color: ${sRGBBlueString};"></div>
+      <div class="colors" style="background-color: ${P3BlueString};"></div>
+      <div class="colors" style="background-color: ${A98RGBBlueString};"></div>
+      <div class="colors" style="background-color: ${REC2020BlueString};"></div>
+      <div class="colors" style="background-color: ${ProPhotoBlueString};"></div>
+      <div class="colors" style="background-color: ${XYZD50BlueString};"></div>
+      <div class="colors" style="background-color: ${XYZD65BlueString};"></div>
     `;
 
     document.getElementById("green").innerHTML = `
-      <div style="height: 40px; width: 25vw; background-color: ${sRGBGreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${P3GreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${A98RGBGreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${REC2020GreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${ProPhotoGreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD50GreenString};"></div>
-      <div style="height: 40px; width: 25vw; background-color: ${XYZD65GreenString};"></div>
+      <div class="colors" style="background-color: ${sRGBGreenString};"></div>
+      <div class="colors" style="background-color: ${P3GreenString};"></div>
+      <div class="colors" style="background-color: ${A98RGBGreenString};"></div>
+      <div class="colors" style="background-color: ${REC2020GreenString};"></div>
+      <div class="colors" style="background-color: ${ProPhotoGreenString};"></div>
+      <div class="colors" style="background-color: ${XYZD50GreenString};"></div>
+      <div class="colors" style="background-color: ${XYZD65GreenString};"></div>
 
 
     `;
